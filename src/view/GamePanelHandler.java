@@ -15,6 +15,7 @@ public class GamePanelHandler {
     private JTextField textField1;
     private JButton choices;
     private JTextArea textArea1;
+    private JLabel title;
 
 
     public GamePanelHandler(){
