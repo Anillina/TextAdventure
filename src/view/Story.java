@@ -45,8 +45,8 @@ public class Story {
         }
     }
 
-    public void setShownSentence(){
-        double temp=System.currentTimeMillis();
+    /*public void setShownSentence(){
+        double temp
         for(int i=0;i<sentences.length;i++) {
             for(int j=0;j<sentences[i].length;j++){
                 for(int k=0;k<sentences[i][j].length;k++) {
@@ -57,5 +57,5 @@ public class Story {
                 }
             }
         }
-    }
+    }*/
 }
