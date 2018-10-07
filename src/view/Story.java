@@ -24,7 +24,7 @@ public class Story {
     }
 
     /**
-     * sentences und choices sind 3 dimensionale Arrays , 1 Dimension gibt die Ebene an , 2 Dimension gibt die
+     * sentences und choices ist ein 3 dimensionales Array , 1 Dimension gibt die Ebene an , 2 Dimension gibt die
      * Auswahlmöglichkeit an(0 ist es gibt keine Auswahlmöglichkeiten) , die 3 Dimension ist für den Satz
      * @param layer Gibt die Ebene an auf dem sich der Spieler/Mason befindet
      */
@@ -37,7 +37,7 @@ public class Story {
     public void setSentencesAndDialouge(int layer){
         if (layer==1){
             sentences[0][0][0]="My"; sentences[0][0][1]="name";sentences[0][0][2]="is"; sentences[0][0][3]="Wright";sentences[0][0][4]="Graham...";
-            sentences[0][0][5]="Or";sentences[0][0][6]="is";sentences[0][0][7]="it";sentences[0][0][8]="Mason";sentences[0][0][9]="Cain";
+            sentences[0][0][5]="Or";sentences[0][0][6]="is";sentences[0][0][7]="it";sentences[0][0][8]="Mason";sentences[0][0][9]="Cain?";
             //dialouge[0][0][0]="Wo bin ich hier?";
             //choices[0][0]="in Wald gehen";choices[0][1]="umdrehen";choices[0][2]="umschauen";
 
