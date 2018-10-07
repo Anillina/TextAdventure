@@ -23,9 +23,9 @@
 
 ---------------------------------------------------------------------------------------------------------------------
 |		       		|		    	            		|
-|	Johanna Kaiser 		| 7.10.18(5 Stunden)	-> Sounds erstellt	|
-|				|	            	-> View erweitert	|
-|				|	            				|
+|	Johanna Kaiser 		| 7.10.18(7 Stunden)	-> Sounds erstellt	|
+|				|	            	-> View erweitert,	|
+|				|	           	   "verschönert"	|
 |--------------------------------------------------------------------------------------------------------------------
 |		       		|7.10.18(1 Stunde) 	->Story zu Model verschoben
 							->Kleinere Änderungen an Model/Controller
