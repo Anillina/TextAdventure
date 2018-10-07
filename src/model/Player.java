@@ -34,5 +34,6 @@ public class Player extends Being {
     public void setHp(int hp) {
         this.hp = hp;
     }
+
 }
 
