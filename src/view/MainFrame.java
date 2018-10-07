@@ -1,8 +1,10 @@
+
 package view;
 
 import sun.applet.Main;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -91,16 +93,21 @@ public class MainFrame extends JFrame {
             setContentPane(painting);
             //JTextArea
             painting.setjTextArea(new JTextArea());
-            painting.addComponent(painting,painting.getjTextArea(),0,0,1,1,2,1);
+            new JScrollPane(painting.getjTextArea());
+            painting.getjTextArea().setBorder(BorderFactory.createMatteBorder(10,10,10,10,Color.black));
+            painting.addComponent(painting,painting.getjTextArea(),0,0,1,1,1,1);
+            painting.getjTextArea().setBackground(new Color(255,0,0));
+
             painting.getjTextArea().setLineWrap(true);painting.getjTextArea().setEditable(false);
-            painting.getjTextArea().setOpaque(false);
-            //Jlist
-            painting.addComponent(painting,new JList<>(),1,0,1,1,1,1);
+            //painting.getjTextArea().setOpaque(false);
+            //painting.setjList(new JList());
+            //painting.addComponent(painting,painting.getjList(),1,0,1,1,1,1);
             //JTextField
             painting.setTextField(new JTextField());
+//            painting.getjList().setBackground(new Color(0,255,0));
             painting.textFieldKeyPressed();
-            painting.addComponent(painting,painting.getTextField(),0,1,1,1,2,0.25);
-            painting.addComponent(painting,new JButton(),1,1,1,1,0.25,0.25);
+            painting.addComponent(painting,painting.getTextField(),0,1,1,0,0.25,0.01);
+            painting.addComponent(painting,new JButton("Get Choices"),1,1,1,1,0.25,0.01);
         }
     }
     /**
@@ -114,9 +121,9 @@ public class MainFrame extends JFrame {
     /**
      * @return gibt nextLayer (Wahrheitswert) zurück
      */
-     public boolean isNextLayer(){
+    public boolean isNextLayer(){
         return nextLayer;
-     }
+    }
 
     public Painting[] getPaintings() {
         return paintings;

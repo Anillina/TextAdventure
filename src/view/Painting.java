@@ -3,6 +3,7 @@ package view;
 import control.ModelController;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 
 import java.awt.event.KeyAdapter;
@@ -17,6 +18,7 @@ public  class Painting extends JPanel{
     private String choice;
     private JTextField textField;
     private JTextArea jTextArea;
+    private JList jList;
     private JButton[] buttons;
     private GridBagLayout layout;
     private PaintTool paintTool;
@@ -124,6 +126,10 @@ public  class Painting extends JPanel{
         this.jTextArea = jTextArea;
     }
 
+    public void setjList(JList jList) {
+        this.jList = jList;
+    }
+
     public JTextArea getjTextArea() {
         return jTextArea;
     }
@@ -134,5 +140,9 @@ public  class Painting extends JPanel{
 
     public String getChoice() {
         return choice;
+    }
+
+    public JList getjList() {
+        return jList;
     }
 }
