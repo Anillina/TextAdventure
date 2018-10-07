@@ -93,18 +93,17 @@ public class MainFrame extends JFrame {
             setContentPane(painting);
             //JTextArea
             painting.setjTextArea(new JTextArea());
-            new JScrollPane(painting.getjTextArea());
-            painting.getjTextArea().setBorder(BorderFactory.createMatteBorder(10,10,10,10,Color.black));
-            painting.addComponent(painting,painting.getjTextArea(),0,0,1,1,1,1);
-            painting.getjTextArea().setBackground(new Color(255,0,0));
-
+            painting.getjTextArea().setBorder(BorderFactory.createMatteBorder(10,10,10,0,new Color(21,30,61)));
+            painting.addComponent(painting,painting.getjTextArea(),0,0,1,1,6,1);
             painting.getjTextArea().setLineWrap(true);painting.getjTextArea().setEditable(false);
-            //painting.getjTextArea().setOpaque(false);
-            //painting.setjList(new JList());
-            //painting.addComponent(painting,painting.getjList(),1,0,1,1,1,1);
+            painting.getjTextArea().setOpaque(false);
+            painting.setjList(new JList());
+            painting.getjList().setBorder(BorderFactory.createMatteBorder(10,0,10,10,new Color(21,30,61)));
+            painting.getjList().setBackground(new Color(0,0,0,4));
+            painting.addComponent(painting,painting.getjList(),1,0,1,1,0.25,1);
             //JTextField
             painting.setTextField(new JTextField());
-//            painting.getjList().setBackground(new Color(0,255,0));
+            painting.getTextField().setBorder(BorderFactory.createMatteBorder(0,10,10,10,new Color(21,30,61)));
             painting.textFieldKeyPressed();
             painting.addComponent(painting,painting.getTextField(),0,1,1,0,0.25,0.01);
             painting.addComponent(painting,new JButton("Get Choices"),1,1,1,1,0.25,0.01);
