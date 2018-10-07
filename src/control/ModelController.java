@@ -3,7 +3,7 @@ package control;
 import model.Monster;
 import model.Player;
 import view.PaintTool;
-import view.Story;
+import model.Story;
 import view.MainView;
 
 import java.awt.*;
@@ -60,5 +60,14 @@ public class ModelController {
         return player;
     }
 
+    /**
+     *
+     * @return das Array sentencesAndChoices der Story wird zurückgegeben
+     */
+
+    public String[][] getSentencesAndChoices(){
+        String[][] output=story.getSentencesAndChoices();
+        return output;
+    }
 
 }
