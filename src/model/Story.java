@@ -32,7 +32,7 @@ public class Story {
             sentences[0][0]="My"; sentences[0][1]="name";sentences[0][2]="is"; sentences[0][3]="Wright";sentences[0][4]="Graham...";
             sentences[0][5]="Or";sentences[0][6]="is";sentences[0][7]="it";sentences[0][8]="Mason";sentences[0][9]="Cain?";
 
-            sentences[1][0]="in Wald gehen";sentences[1][1]="umdrehen";sentences[1][2]="umschauen";
+            sentences[1][0]="go into Forest";sentences[1][1]="turn around";sentences[1][2]="look around";
 
         }
     }
