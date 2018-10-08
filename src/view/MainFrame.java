@@ -92,11 +92,10 @@ public class MainFrame extends JFrame {
             Painting painting= paintings[view.getLayer()];
             setContentPane(painting);
             //JTextArea
-            painting.setjTextArea(new JTextArea());
-            painting.getjTextArea().setBorder(BorderFactory.createMatteBorder(10,10,10,0,new Color(21,30,61)));
-            painting.addComponent(painting,painting.getjTextArea(),0,0,1,1,6,1);
-            painting.getjTextArea().setLineWrap(true);painting.getjTextArea().setEditable(false);
-            painting.getjTextArea().setOpaque(false);
+            painting.setLabel(new JLabel());
+            painting.getLabel().setBorder(BorderFactory.createMatteBorder(10,10,10,0,new Color(21,30,61)));
+            painting.addComponent(painting,painting.getLabel(),0,0,1,1,6,1);
+            painting.getLabel().setOpaque(false);
             painting.setjList(new JList());
             painting.getjList().setBorder(BorderFactory.createMatteBorder(10,0,10,10,new Color(21,30,61)));
             painting.getjList().setBackground(new Color(0,0,0,4));

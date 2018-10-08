@@ -17,7 +17,7 @@ public  class Painting extends JPanel{
 
     private String choice;
     private JTextField textField;
-    private JTextArea jTextArea;
+    private JLabel label;
     private JList jList;
     private JButton[] buttons;
     private GridBagLayout layout;
@@ -122,16 +122,16 @@ public  class Painting extends JPanel{
         this.textField = textField;
     }
 
-    public void setjTextArea(JTextArea jTextArea) {
-        this.jTextArea = jTextArea;
+    public  void setLabel(JLabel labe){
+        label= labe;
     }
 
     public void setjList(JList jList) {
         this.jList = jList;
     }
 
-    public JTextArea getjTextArea() {
-        return jTextArea;
+    public JLabel getLabel(){
+        return label;
     }
 
     public PaintTool getPaintTool() {
