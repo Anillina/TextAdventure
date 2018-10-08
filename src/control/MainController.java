@@ -1,11 +1,14 @@
 package control;
 
-import view.Frame;
+import view.MainView;
 
 public class MainController {
 
     public static void main(String[]args){
-        new Frame(1500,1000);
+        ModelController modelC=new ModelController();
+        MainView viewC=new MainView(modelC);
+        modelC.setViewController(viewC);
+        viewC.update();
 
     }
 
