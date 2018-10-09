@@ -9,7 +9,6 @@ public class MainController {
         MainView viewC=new MainView(modelC);
         modelC.setViewController(viewC);
         viewC.update();
-
     }
 
 }

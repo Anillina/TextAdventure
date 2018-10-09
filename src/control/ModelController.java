@@ -20,6 +20,7 @@ public class ModelController {
 
     public ModelController(){
         player=new Player(1,10);
+        story=new Story(player.getLayer());
     }
 
     public void loadImages(PaintTool paintTool){
@@ -39,6 +40,7 @@ public class ModelController {
     public void updateLayers(){
        if(view.getFrame().isNextLayer()){
            player.setLayer(player.getLayer()+1);
+           story.setSentencesAndChoices(player.getLayer());
            System.out.println(getPlayer().getLayer());
            view.getFrame().setNextLayer(false);
        }
@@ -62,12 +64,11 @@ public class ModelController {
 
     /**
      *
-     * @return das Array sentencesAndChoices der Story wird zurückgegeben
+     * @return das 2d Array sentencesAndChoices der Story wird zurückgegeben
      */
 
     public String[][] getSentencesAndChoices(){
-        String[][] output=story.getSentencesAndChoices();
-        return output;
+        return story.getSentencesAndChoices();
     }
 
 }
