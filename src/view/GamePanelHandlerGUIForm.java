@@ -36,7 +36,7 @@ public class GamePanelHandlerGUIForm {
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                lableArea.("")
+                //lableArea.("")
             }
         });
         button2.addActionListener(new ActionListener() {
