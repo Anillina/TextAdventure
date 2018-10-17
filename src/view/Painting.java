@@ -109,6 +109,9 @@ public  class Painting extends JPanel{
         });
     }
 
+    public void setLabelText (String txt){
+        label.setText(txt);
+    }
     /**
      *
      * @return das textField wird zurückgegeben

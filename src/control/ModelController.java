@@ -17,6 +17,7 @@ public class ModelController {
     private MainView view;
     private Monster[] monsters;
     private Story story;
+    private StoryController sc;
 
     public ModelController(){
         player=new Player(1,10);
@@ -31,7 +32,7 @@ public class ModelController {
      * Zeichnet die Models
      */
     public void paint(PaintTool paintTool){
-        //paintTool.drawImage(player.getImg(),500,500);
+        paintTool.drawImage(player.getImg(),500,500);
     }
 
     /**
@@ -43,6 +44,7 @@ public class ModelController {
            story.setSentencesAndChoices(player.getLayer());
            System.out.println(getPlayer().getLayer());
            view.getFrame().setNextLayer(false);
+           sc.updateText();
        }
     }
 
