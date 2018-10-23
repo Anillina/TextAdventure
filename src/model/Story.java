@@ -19,8 +19,10 @@ public class Story {
      */
 
     private void setSentencesAndChoices() {
-        sentences=new String[13][10][2];
+        sentences=new String[13][][];
         // layer 1-1
+        sentences[0]=new String [6][2];
+
         sentences[0][0][0]="1";
         sentences[0][1][0]="2a";
         sentences[0][2][0]="2b";
@@ -35,6 +37,8 @@ public class Story {
         sentences[0][5][1]="Auswahl 2";
 
         // layer 1-2a
+        sentences[1]=new String [3][2];
+
         sentences[1][0][0]="2a";
         sentences[1][1][0]="God has forbidden me to enter heaven or hell- Might as well stay here, where I feel like I exist.";
         sentences[1][2][0]="Game Over";
@@ -43,6 +47,8 @@ public class Story {
         sentences[1][2][1]="Anweisung 1";
 
         //layer 1-2b
+        sentences[2]=new String [8][2];
+
         sentences[2][0][0]="2b";
         sentences[2][1][0]="3ba";
         sentences[2][2][0]="3bb";
@@ -62,6 +68,8 @@ public class Story {
         sentences[2][7][1]="Auswahl 3";
 
         //layer 1-3ba
+        sentences[3]=new String [10][2];
+
         sentences[3][0][0]="3ba";
         sentences[3][1][0]="4baa";
         sentences[3][2][0]="4bab";
@@ -85,6 +93,8 @@ public class Story {
         sentences[3][9][1]="Auswahl 4";
 
         //layer 1-4baa
+        sentences[4]=new String [3][2];
+
         sentences[4][0][0]="4baa";
         sentences[4][1][0]="I eat the dead decaying rat.I put it all in my mouth and start chewing slowly. Black fluid is dripping out of my mouth as I crunch my meal down. I feel refreshed now. I continue my walk and head further into the forest. Before I start to regret to have eaten a dead decaying rat I see a dime light from afar. – It is a towering humanoid being. Twice as tall as I am. A skin so white it is shining in the darkness. It is missing one of its hollow eyes. Otherwise it is wearing a white and black cloak. Its presences is… strangely welcoming. It not human, nor anything I have ever seen, that I know for a certainty. Nevertheless, I want to get closer and closer to it. Hugging it. Like a moth drawn to light.";
         sentences[4][2][0]="Next layer";
@@ -93,6 +103,8 @@ public class Story {
         sentences[4][2][1]="Anweisung 1";
 
         //layer 1-4bab
+        sentences[5]=new String [3][2];
+
         sentences[5][0][0]="4bab";
         sentences[5][1][0]="I eat part of the pile of caterpillars that the dead rat was laying on.I put it all in my mouth and start chewing slowly. Black fluid is dripping out of my mouth as I crunch my meal down. I feel refreshed now. I continue my walk and head further into the forest. Before I start to regret to have eaten some caterpillars I see a dime light from afar. – It is a towering humanoid being. Twice as tall as I am. A skin so white it is shining in the darkness. It is missing one of its hollow eyes. Otherwise it is wearing a white and black cloak. Its presences is… strangely welcoming. It not human, nor anything I have ever seen, that I know for a certainty. Nevertheless, I want to get closer and closer to it. Hugging it. Like a moth drawn to light.";
         sentences[5][2][0]="Next layer";
@@ -101,6 +113,8 @@ public class Story {
         sentences[5][2][1]="Anweisung 1";
 
         //layer 1-4bac
+        sentences[6]=new String [3][2];
+
         sentences[6][0][0]="4bac";
         sentences[6][1][0]="I pick down an orange eyeball from a tree nearby. On closer exception they are more yellow than orange.Black fluid is dripping out of my mouth as I crunch my meal down. I feel refreshed now. I continue my walk and head further into the forest. Before I start to regret to have eaten an eyeball I see a dime light from afar. – It is a towering humanoid being. Twice as tall as I am. A skin so white it is shining in the darkness. It is missing one of its hollow eyes. Otherwise it is wearing a white and black cloak. Its presences is… strangely welcoming. It not human, nor anything I have ever seen, that I know for a certainty. Nevertheless, I want to get closer and closer to it. Hugging it. Like a moth drawn to light.";
         sentences[6][2][0]="Next layer";
@@ -109,6 +123,8 @@ public class Story {
         sentences[6][2][1]="Anweisung 1";
 
         //layer 1-4bad
+        sentences[7]=new String [3][2];
+
         sentences[7][0][0]="4bad";
         sentences[7][1][0]="I decide otherwise. I eat nothing. I continue my walk and head further into the forest.I see a dime light from afar. – It is a towering humanoid being. Twice as tall as I am. A skin so white it is shining in the darkness. It is missing one of its hollow eyes. Otherwise it is wearing a white and black cloak. Its presences is… strangely welcoming. It not human, nor anything I have ever seen, that I know for a certainty. Nevertheless, I want to get closer and closer to it. Hugging it. Like a moth drawn to light.";
         sentences[7][2][0]="Next layer";
@@ -117,6 +133,8 @@ public class Story {
         sentences[7][2][1]="Anweisung 1";
 
         //layer 1-3bb
+        sentences[8]=new String [8][2];
+
         sentences[8][0][0]="3bb";
         sentences[8][1][0]="3ba";
         sentences[8][2][0]="3ba";
@@ -135,6 +153,8 @@ public class Story {
         sentences[8][7][1]="Auswahl 3";
 
         //layer 1-3bc
+        sentences[9]=new String [8][2];
+
         sentences[9][0][0]="3bc";
         sentences[9][1][0]="4bca";
         sentences[9][2][0]="4bcb";
@@ -152,12 +172,16 @@ public class Story {
         sentences[9][6][1]="Auswahl 2";
         sentences[9][7][1]="Auswahl 3";
         //layer 1-4bca
+        sentences[10]=new String [2][2];
+
         sentences[10][0][0]="4bca";
         sentences[10][1][0]="3ba";
 
         sentences[10][1][1]="Ort 1";
 
         //layer 1-4bcb
+        sentences[11]=new String [3][2];
+
         sentences[11][0][0]="4bcb";
         sentences[11][1][0]="3ba";
         sentences[11][2][0]="I plug it out of the ground and hold it in my hands. Then I have no other thing to do. I continue my march";
@@ -166,13 +190,14 @@ public class Story {
         sentences[11][2][1]="Text 1";
 
         //layer 1-4bcc
+        sentences[12]=new String [3][2];
+
         sentences[12][0][0]="4bcc";
         sentences[12][1][0]="3ba";
         sentences[12][2][0]="I plug it out of the ground and hold it in my hands. I then put the flower in my mouth and eat it. I am not hungry nor do I need the vitamins, if it has any, from the flower. Yet I ate it and it tastes like nothing. And so I feel. With nothing better do to I continue the way.";
 
         sentences[12][1][1]="Ort 1";
         sentences[12][2][1]="Text 1";
-
     }
 
     /**
@@ -196,13 +221,13 @@ public class Story {
         if(found){
             String [][] output=new String [2][sentences[foundAt].length-1];
             for (int i = 1; i < sentences[foundAt].length; i++) {
-                for (int j = 0; j < sentences[foundAt][0].length; j++) {
+                for (int j = 0; j < sentences[foundAt][i].length; j++) {
                     output[j][i-1]=sentences[foundAt][i][j];
                 }
             }
             return output;
         }else{
-            String [][] output={new String []{"Position des Spielers nicht korekt angegeben!"}};
+            String [][] output={new String []{"Position des Spielers nicht korrekt angegeben!"}};
             return output;
         }
 
