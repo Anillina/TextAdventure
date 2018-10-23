@@ -18,7 +18,7 @@ public class Story {
      * in der dritten der Typ des Inhalts gespeichert wird
      */
 
-    public void setSentencesAndChoices() {
+    private void setSentencesAndChoices() {
         sentences=new String[13][10][2];
         // layer 1-1
         sentences[0][0][0]="1";
