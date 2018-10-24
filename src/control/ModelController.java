@@ -1,12 +1,11 @@
 package control;
 
+import model.Background;
 import model.Monster;
 import model.Player;
 import view.PaintTool;
 import model.Story;
 import view.MainView;
-
-import java.awt.*;
 
 /**
  * Ist für die Instanziierung der Models und deren Verwaltung zuständig
@@ -16,8 +15,8 @@ public class ModelController {
     private Player player;
     private MainView view;
     private Monster[] monsters;
+    private Background background;
     private Story story;
-    private StoryController sc;
 
     public ModelController(){
         player=new Player(1,10);
@@ -32,7 +31,12 @@ public class ModelController {
      * Zeichnet die Models
      */
     public void paint(PaintTool paintTool){
-        paintTool.drawImage(player.getImg(),500,500);
+        //paintTool.drawImage(player.getImg(),500,500);
+        paintTool.drawImage(background.getBackgrounds()[0],0,0);
+    }
+
+    public void move(){
+        background.manageScene(player.getLayer(),player.getElapsedTime());
     }
 
     /**
@@ -44,7 +48,6 @@ public class ModelController {
            story.setSentencesAndChoices(player.getLayer());
            System.out.println(getPlayer().getLayer());
            view.getFrame().setNextLayer(false);
-           sc.updateText();
        }
     }
 
@@ -54,6 +57,7 @@ public class ModelController {
      */
     public void setViewController(MainView mV){
         view=mV;
+        background=new Background(player.getLayer(),view.getWidthDevice(),view.getHeightDevice());
     }
 
     /**

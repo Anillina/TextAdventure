@@ -10,6 +10,7 @@ import java.awt.*;
 public class MainView {
    //Attribute
    private int layer;
+   private final int widthDevice,heightDevice;
    //Referenzen
    private MainFrame frame;
    private ModelController modelController;
@@ -20,11 +21,9 @@ public class MainView {
        modelController=mC;
        layer=modelController.getPlayer().getLayer();
        GraphicsDevice gd= GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-       int width=1500;
-       int height=1000;
-       int x=(int)(gd.getDisplayMode().getWidth()-gd.getDisplayMode().getWidth()/2)-(width/2);
-       int y=(int)(gd.getDisplayMode().getHeight()-gd.getDisplayMode().getHeight()/2)-(height/2);
-       frame=new MainFrame(x,y,width,height,this);
+       widthDevice=gd.getDisplayMode().getWidth();
+       heightDevice=gd.getDisplayMode().getHeight();
+       frame=new MainFrame(0,0,widthDevice,heightDevice,this);
    }
 
     /**
@@ -74,4 +73,11 @@ public class MainView {
         this.layer=layer;
     }
 
+    public int getWidthDevice() {
+        return widthDevice;
+    }
+
+    public int getHeightDevice() {
+        return heightDevice;
+    }
 }
