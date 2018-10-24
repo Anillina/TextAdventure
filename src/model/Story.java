@@ -136,9 +136,9 @@ public class Story {
 
         //layer 1-3bc
         sentences[9][0][0]="3bc";
-        sentences[9][1][0]="4bca";
-        sentences[9][2][0]="4bcb";
-        sentences[9][3][0]="4bcc";
+        sentences[9][1][0]="4bcb";
+        sentences[9][2][0]="4bcc";
+        sentences[9][3][0]="4bca";
         sentences[9][4][0]="I continue my way forward. In front of me are branches and eyeballs blocking my way that I have to push aside to get through the forest. I see, in the dims of darkness, piles of dead caterpillars. Just lying on the ground. It would not be strange if it was just a few bug piles. But right here are fourth and more piles of dead bugs. I stand in silence and wonder for a few minutes. And then I continue my walk. Through the forest. Pushing aside branches and eyeball, walking over piles, and progressing deeper and deeper into the forest. Pushing branches away- Two weeks, this is how long it feels like I have been wandering in this forest. Unable to see the days, for darkness doesn’t seem to shift. Not even a moon can be seen. I walk my next hundreds kilometer, but then I see the piles of caterpillars. How? I – I fell unconscious. I was awoken by the tiny blue light in front of me. It’s a small blue glowing flower. It typ is uncertaint, its purpose is unclear, and its looks are unusual.";
         sentences[9][5][0]="Keep it";
         sentences[9][6][0]="Eat it";

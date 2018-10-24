@@ -9,10 +9,12 @@ public class Being{
 
     private int fightStrength;
     private int layer;
+    private int level;
 
     public Being(int fightStrength) {
         this.fightStrength = fightStrength;
         layer=0;
+        level=0;
     }
 
     /**
@@ -39,4 +41,13 @@ public class Being{
     public BufferedImage getImg() {
         return img;
     }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
 }

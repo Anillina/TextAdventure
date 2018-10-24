@@ -148,4 +148,8 @@ public  class Painting extends JPanel{
     public JList getjList() {
         return jList;
     }
+
+    public void setText(String help){
+        textField.setText(help);
+    }
 }
