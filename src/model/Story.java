@@ -116,7 +116,7 @@ public class Story {
         sentences[6]=new String [3][2];
 
         sentences[6][0][0]="4bac";
-        sentences[6][1][0]="I pick down an orange eyeball from a tree nearby. On closer exception they are more yellow than orange.Black fluid is dripping out of my mouth as I crunch my meal down. I feel refreshed now. I continue my walk and head further into the forest. Before I start to regret to have eaten an eyeball I see a dime light from afar. – It is a towering humanoid being. Twice as tall as I am. A skin so white it is shining in the darkness. It is missing one of its hollow eyes. Otherwise it is wearing a white and black cloak. Its presences is… strangely welcoming. It not human, nor anything I have ever seen, that I know for a certainty. Nevertheless, I want to get closer and closer to it. Hugging it. Like a moth drawn to light.";
+        sentences[6][1][0]="I pick up an orange eyeball from a tree nearby. On closer exception they are more yellow than orange.Black fluid is dripping out of my mouth as I crunch my meal down. I feel refreshed now. I continue my walk and head further into the forest. Before I start to regret to have eaten an eyeball I see a dime light from afar. – It is a towering humanoid being. Twice as tall as I am. A skin so white it is shining in the darkness. It is missing one of its hollow eyes. Otherwise it is wearing a white and black cloak. Its presences is… strangely welcoming. It not human, nor anything I have ever seen, that I know for a certainty. Nevertheless, I want to get closer and closer to it. Hugging it. Like a moth drawn to light.";
         sentences[6][2][0]="Next layer";
 
         sentences[6][1][1]="Text 1";
@@ -159,7 +159,7 @@ public class Story {
         sentences[9][1][0]="4bcb";
         sentences[9][2][0]="4bcc";
         sentences[9][3][0]="4bca";
-        sentences[9][4][0]="I continue my way forward. In front of me are branches and eyeballs blocking my way that I have to push aside to get through the forest. I see, in the dims of darkness, piles of dead caterpillars. Just lying on the ground. It would not be strange if it was just a few bug piles. But right here are fourth and more piles of dead bugs. I stand in silence and wonder for a few minutes. And then I continue my walk. Through the forest. Pushing aside branches and eyeball, walking over piles, and progressing deeper and deeper into the forest. Pushing branches away- Two weeks, this is how long it feels like I have been wandering in this forest. Unable to see the days, for darkness doesn’t seem to shift. Not even a moon can be seen. I walk my next hundreds kilometer, but then I see the piles of caterpillars. How? I – I fell unconscious. I was awoken by the tiny blue light in front of me. It’s a small blue glowing flower. It typ is uncertaint, its purpose is unclear, and its looks are unusual.";
+        sentences[9][4][0]="I continue my way forward. In front of me are branches and eyeballs blocking my way that I have to push aside to get through the forest. I see, in the dims of darkness, piles of dead caterpillars. Just lying on the ground. It would not be strange if it was just a few bug piles. But right here are more piles of dead bugs in the shape of a rectangle. I stand in silence and wonder for a few minutes. And then I continue my walk. Through the forest. Pushing aside branches and eyeball, walking over piles, and progressing deeper and deeper into the forest. Pushing branches away and steeping over piles of dead bugs on the ground. Deeper and deeper into the forest. Pushing branches away-      Two weeks, this is how long it feels like I have been wandering in this forest. Unable to feel the time passing, for the night doesn’t seem to change. Not even a moon can be seen. I walk my next hundreds kilometer, but then I see the rectangle piles of caterpillars. How? I – I fell unconscious. I was awoken by the tiny blue light in front of me. It’s a small blue glowing flower. It type is uncertain, its purpose is unclear, and its looks are unusual.";
         sentences[9][5][0]="Keep it";
         sentences[9][6][0]="Eat it";
         sentences[9][7][0]="Ignore it";
@@ -184,7 +184,7 @@ public class Story {
 
         sentences[11][0][0]="4bcb";
         sentences[11][1][0]="3ba";
-        sentences[11][2][0]="I plug it out of the ground and hold it in my hands. Then I have no other thing to do. I continue my march";
+        sentences[11][2][0]="I plug it out of the ground and hold it in my hands. Then I have nothing else to do. I continue my march";
 
         sentences[11][1][1]="Ort 1";
         sentences[11][2][1]="Text 1";
