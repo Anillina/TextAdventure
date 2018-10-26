@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="577.0" y="532.0">view.MainView</node>
+    <node x="0.0" y="532.0">view.MainFrame</node>
+    <node x="886.0" y="0.0">model.Being</node>
+    <node x="600.0" y="896.0">model.Story</node>
+    <node x="466.0" y="1104.0">view.GamePanelHandler</node>
+    <node x="13.5" y="0.0">view.GamePanelHandlerGUIForm</node>
+    <node x="315.0" y="532.0">control.ModelController</node>
+    <node x="254.0" y="1104.0">control.MainController</node>
+    <node x="384.0" y="896.0">control.StoryController</node>
+    <node x="0.0" y="435.0">view.GamePanelHandlerGUIForm.TitleScreenHandler</node>
+    <node x="817.0" y="258.0">model.Monster</node>
+    <node x="0.0" y="1104.0">model.Backgrounds</node>
+    <node x="973.0" y="213.0">model.Player</node>
+    <node x="299.0" y="0.0">view.Painting</node>
+    <node x="0.0" y="896.0">view.PaintTool</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="view.GamePanelHandlerGUIForm.TitleScreenHandler" target="view.GamePanelHandlerGUIForm">
+      <point x="0.0" y="-26.0" />
+      <point x="0.0" y="192.5" />
+    </edge>
+    <edge source="model.Player" target="model.Being">
+      <point x="0.0" y="-71.0" />
+      <point x="1052.0" y="188.0" />
+      <point x="1009.75" y="188.0" />
+      <point x="41.25" y="81.5" />
+    </edge>
+    <edge source="model.Monster" target="model.Being">
+      <point x="0.0" y="-26.0" />
+      <point x="885.0" y="188.0" />
+      <point x="927.25" y="188.0" />
+      <point x="-41.25" y="81.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="601.5079365079365" y="232.85714285714292" />
+  <SelectedNodes>
+    <node>view.GamePanelHandler</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
