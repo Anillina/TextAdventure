@@ -14,13 +14,14 @@ public class ModelController {
 
     private Player player;
     private MainView view;
-    private Monster[] monsters;
     private Background background;
     private Story story;
+    private StoryController storyController;
 
     public ModelController(){
         player=new Player(1,10);
-        story=new Story(player.getLayer());
+        story=new Story();
+        storyController=new StoryController(player,story);
     }
 
     public void loadImages(PaintTool paintTool){
@@ -32,7 +33,7 @@ public class ModelController {
      */
     public void paint(PaintTool paintTool){
         //paintTool.drawImage(player.getImg(),500,500);
-        paintTool.drawImage(background.getBackgrounds()[0],0,0);
+        //paintTool.drawImage(background.getBackgrounds()[0],0,0);
     }
 
     public void move(){
@@ -45,8 +46,8 @@ public class ModelController {
     public void updateLayers(){
        if(view.getFrame().isNextLayer()){
            player.setLayer(player.getLayer()+1);
-           story.setSentencesAndChoices(player.getLayer());
-           System.out.println(getPlayer().getLayer());
+           view.getFrame().drawPaintings();
+           //storyController.checkAnswer();
            view.getFrame().setNextLayer(false);
        }
     }
@@ -71,10 +72,21 @@ public class ModelController {
     /**
      *
      * @return das 2d Array sentencesAndChoices der Story wird zurückgegeben
-     */
+     *
 
     public String[][] getSentencesAndChoices(){
-        return story.getSentencesAndChoices();
+        return story.getSentencesAndChoices(0);
+    }*/
+    public StoryController getStoryController() {
+        return storyController;
     }
 
+    public void storyControllerPlay(){
+        if(view!=null) {
+            if(storyController.getPainting()==null) {
+                storyController.setPainting(view.getFrame().getPaintings()[player.getLayer()]);
+            }
+            storyController.checkAnswer();
+        }
+    }
 }

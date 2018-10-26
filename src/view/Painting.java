@@ -3,7 +3,6 @@ package view;
 import control.ModelController;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
 import java.awt.event.KeyAdapter;
@@ -17,8 +16,7 @@ public  class Painting extends JPanel{
 
     private String choice;
     private JTextField textField;
-    private JLabel label;
-    private JList jList;
+    private JLabel label,choiceLabel;
     private JButton[] buttons;
     private GridBagLayout layout;
     private PaintTool paintTool;
@@ -103,7 +101,11 @@ public  class Painting extends JPanel{
                     choice=textField.getText();
                     textField.setText("");
                     System.out.println(choice);
+                    modelController.storyControllerPlay();
+                    repaint();
+                    revalidate();
 
+                    System.out.println(modelController.getPlayer().getLevel());
                 }
             }
         });
@@ -129,9 +131,19 @@ public  class Painting extends JPanel{
         label= labe;
     }
 
-    public void setjList(JList jList) {
-        this.jList = jList;
+
+    public void setChoiceLabel(JLabel choiceLabel) {
+        this.choiceLabel = choiceLabel;
     }
+
+    public void setText(String help){
+        label.setText(help);
+    }
+
+    public void setChoiceText(String choice){
+        choiceLabel.setText(choice);
+    }
+
 
     public JLabel getLabel(){
         return label;
@@ -145,11 +157,9 @@ public  class Painting extends JPanel{
         return choice;
     }
 
-    public JList getjList() {
-        return jList;
+
+    public JLabel getChoiceLabel() {
+        return choiceLabel;
     }
 
-    public void setText(String help){
-        textField.setText(help);
-    }
 }

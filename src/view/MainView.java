@@ -14,8 +14,6 @@ public class MainView {
    //Referenzen
    private MainFrame frame;
    private ModelController modelController;
-   private String shownText;
-   private String[] buttonText;
 
    public MainView(ModelController mC){
        modelController=mC;
@@ -31,22 +29,10 @@ public class MainView {
      *
      */
    public void update(){
-       System.out.println(frame.isNextLayer());
-       layer=modelController.getPlayer().getLayer();
-       modelController.updateLayers();
+       frame.getContentPane().invalidate();
        frame.updatePanel();
-   }
-
-   public void updateLabel(){
-       for(int i=0;i<modelController.getSentencesAndChoices().length;i++){
-           for(int j=0;j<modelController.getSentencesAndChoices()[i].length;j++){
-               shownText=modelController.getSentencesAndChoices()[i][j]+" ";
-           }
-           buttonText=new String[modelController.getSentencesAndChoices()[1].length];
-           for(int k=0;k<buttonText.length;k++){
-               buttonText[k]=modelController.getSentencesAndChoices()[1][k];
-           }
-       }
+       modelController.updateLayers();
+       frame.revalidate();
    }
 
     /**

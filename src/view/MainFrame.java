@@ -3,6 +3,8 @@ package view;
 
 
 
+import control.ModelController;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -20,6 +22,7 @@ public class MainFrame extends JFrame {
     private boolean nextLayer;
     private MainView view;
     private Painting[] paintings;
+    private ModelController mC;
 
     /**
      * Ein Frame wird beim Aufruf dieses Konstruktors erzeugt
@@ -33,6 +36,7 @@ public class MainFrame extends JFrame {
         this.view=view;
         this.x=x;this.y=y;this.width=width;this.height=height;
         setTitle("Depths of my Mind");
+        mC=view.getModelController();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocation(x,y);
         setSize(width,height);
@@ -77,6 +81,7 @@ public class MainFrame extends JFrame {
         drawPaintings();
         revalidate();
         repaint();
+        System.out.println(mC.getPlayer().getLevel());
     }
 
     /**
@@ -91,21 +96,22 @@ public class MainFrame extends JFrame {
         if (view.getLayer()==1 ){
             Painting painting= paintings[view.getLayer()];
             setContentPane(painting);
-            //JTextArea
+            //JLabel
             painting.setLabel(new JLabel());
             painting.getLabel().setBorder(BorderFactory.createMatteBorder(10,10,10,0,new Color(21,30,61)));
             painting.addComponent(painting,painting.getLabel(),0,0,1,1,6,1);
-            painting.getLabel().setOpaque(false);
-            painting.setjList(new JList());
-            painting.getjList().setBorder(BorderFactory.createMatteBorder(10,0,10,10,new Color(21,30,61)));
-            painting.getjList().setBackground(new Color(0,0,0,4));
-            painting.addComponent(painting,painting.getjList(),1,0,1,1,0.25,1);
+            painting.getLabel().setOpaque(false);painting.setText("Ave");
+            painting.setChoiceLabel(new JLabel());
+            painting.getChoiceLabel().setBorder(BorderFactory.createMatteBorder(10,10,10,10,new Color(21,30,61)));
+            painting.getChoiceLabel().setBackground(new Color(0,0,0,4));
+            painting.addComponent(painting,painting.getChoiceLabel(),1,0,1,1,0.25,1);
             //JTextField
             painting.setTextField(new JTextField());
             painting.getTextField().setBorder(BorderFactory.createMatteBorder(0,10,10,10,new Color(21,30,61)));
             painting.textFieldKeyPressed();
             painting.addComponent(painting,painting.getTextField(),0,1,1,0,0.25,0.01);
             painting.addComponent(painting,new JButton("Get Choices"),1,1,1,1,0.25,0.01);
+            mC.storyControllerPlay();
         }
     }
     /**
