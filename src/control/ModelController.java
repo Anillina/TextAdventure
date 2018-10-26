@@ -23,10 +23,6 @@ public class ModelController {
         storyController=new StoryController(player,story);
     }
 
-    public void loadImages(PaintTool paintTool){
-        player.setImage(paintTool.createImage(player.getImg(),"assets/characters/mason.png"));
-    }
-
     /**
      * Zeichnet die Models
      */
