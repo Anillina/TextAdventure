@@ -3,7 +3,7 @@ package model;
 
 import java.awt.image.BufferedImage;
 
-public class Being{
+public abstract class Being{
 
     private BufferedImage img;
 
