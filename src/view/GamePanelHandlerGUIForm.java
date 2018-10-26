@@ -66,7 +66,7 @@ public class GamePanelHandlerGUIForm {
             @Override
             public void actionPerformed(ActionEvent e) {
                 createGameScreen();
-                view.getLayer() = 1;
+                //view.getLayer() = 1;
             }
         });
 
@@ -107,7 +107,6 @@ public class GamePanelHandlerGUIForm {
         titleNameLable.setVisible(false);
         startButton.setVisible(false);
 
-        lableArea = new JLabel(""+ String [] Story.getSentencesAndChoices(1));
         lableArea.setBounds(100,100,600,250);
         lableArea.setBackground(Color.black);
         lableArea.setForeground(Color.WHITE);

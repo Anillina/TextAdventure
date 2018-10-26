@@ -1,10 +1,7 @@
 package control;
 
-import model.Background;
-import model.Monster;
-import model.Player;
+import model.*;
 import view.PaintTool;
-import model.Story;
 import view.MainView;
 
 /**
@@ -13,6 +10,7 @@ import view.MainView;
 public class ModelController {
 
     private Player player;
+    private Being monster;
     private MainView view;
     private Background background;
     private Story story;
@@ -20,6 +18,7 @@ public class ModelController {
 
     public ModelController(){
         player=new Player(1,10);
+        monster=new Monster(1);
         story=new Story();
         storyController=new StoryController(player,story);
     }
@@ -87,6 +86,8 @@ public class ModelController {
                 storyController.setPainting(view.getFrame().getPaintings()[player.getLayer()]);
             }
             storyController.checkAnswer();
+            background.setBackgrounds(player.getLayer());
         }
     }
+
 }

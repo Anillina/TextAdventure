@@ -1,11 +1,14 @@
 package model;
 
 
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public abstract class Being{
 
-    private BufferedImage img;
+    private BufferedImage[] img;
 
     private int fightStrength;
     private int layer;
@@ -15,6 +18,10 @@ public abstract class Being{
         this.fightStrength = fightStrength;
         layer=0;
         level=0;
+    }
+
+    public String kill(){
+        return "Ich töte dich!";
     }
 
     /**
@@ -34,11 +41,11 @@ public abstract class Being{
         this.layer=layer;
     }
 
-    public void setImage(BufferedImage img){
+    public void setImage(BufferedImage[] img){
         this.img=img;
     }
 
-    public BufferedImage getImg() {
+    public BufferedImage[] getImg() {
         return img;
     }
 
@@ -48,6 +55,14 @@ public abstract class Being{
 
     public void setLevel(int level) {
         this.level = level;
+    }
+
+    public void loadImage(BufferedImage[] backgrounds,int index,String path){
+        try {
+            backgrounds[index] = ImageIO.read(new File(path));
+        } catch (IOException e) {
+            System.out.println("Filepath wurde nicht richtig angegeben.");
+        }
     }
 
 }
