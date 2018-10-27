@@ -86,4 +86,11 @@ public class ModelController {
         }
     }
 
+    public MainView getView() {
+        return view;
+    }
+
+    public void setView(MainView view) {
+        this.view = view;
+    }
 }

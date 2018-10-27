@@ -6,10 +6,7 @@ package view;
 import control.ModelController;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -19,7 +16,7 @@ import java.awt.event.MouseEvent;
 public class MainFrame extends JFrame {
 
     private int maxLayer,x,y,width,height;
-    private boolean nextLayer;
+    private boolean nextLayer, visibleOfHelp;
     private MainView view;
     private Painting[] paintings;
     private ModelController mC;
@@ -34,6 +31,7 @@ public class MainFrame extends JFrame {
      */
     public MainFrame(int x , int y ,int width, int height,MainView view){
         this.view=view;
+        visibleOfHelp =false;
         this.x=x;this.y=y;this.width=width;this.height=height;
         setTitle("Depths of my Mind");
         mC=view.getModelController();
@@ -64,16 +62,28 @@ public class MainFrame extends JFrame {
      * Diese Methode erzeigt einen MouseListener , für den ersten Knopf auf der nullten Ebene
      */
     public void createButtonListeners(){
-        paintings[0].getButtons()[0].addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                nextLayer=true;
-                view.update();
-                paintings[0].remove(paintings[0].getButtons()[0]);
-                view.setLayer(view.getLayer()+1);
-                drawPaintings();
-            }
-        });
+        if(view.getLayer()==0) {
+            paintings[0].getButtons()[0].addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    nextLayer = true;
+                    view.update();
+                    paintings[0].remove(paintings[0].getButtons()[0]);
+                    view.setLayer(view.getLayer() + 1);
+                    drawPaintings();
+                    //mC.getStoryController().setStoryOfLayer();
+                }
+            });
+        }
+        if(view.getLayer()==1){
+            System.out.println("ave");
+            paintings[1].getChoiceButton().addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    paintings[1].getChoiceLabel().setVisible(true);
+                }
+            });
+        }
     }
 
     public void updatePanel(){
@@ -93,27 +103,32 @@ public class MainFrame extends JFrame {
             paintings[view.getLayer()].setLocationAndTitleOfJButton(paintings[view.getLayer()].getButtons()[0], x + width / 2, y + height / 2, "Start");
             createButtonListeners();
         }
-        if (view.getLayer()==1 ){
+        if (view.getLayer()==1 && view.getModelController().getPlayer().getLevel()==0 ){
             Painting painting= paintings[view.getLayer()];
             setContentPane(painting);
             //JLabel
             painting.setLabel(new JLabel());
             painting.getLabel().setBorder(BorderFactory.createMatteBorder(10,10,10,0,new Color(21,30,61)));
             painting.addComponent(painting,painting.getLabel(),0,0,1,1,6,1);
-            painting.getLabel().setOpaque(false);painting.setText("Ave");
+            painting.getLabel().setOpaque(true);
             painting.setChoiceLabel(new JLabel());
+            paintings[1].getChoiceLabel().setVisible(false);
             painting.getChoiceLabel().setBorder(BorderFactory.createMatteBorder(10,10,10,10,new Color(21,30,61)));
-            painting.getChoiceLabel().setBackground(new Color(0,0,0,4));
+            painting.getChoiceLabel().setOpaque(true);
             painting.addComponent(painting,painting.getChoiceLabel(),1,0,1,1,0.25,1);
             //JTextField
             painting.setTextField(new JTextField());
             painting.getTextField().setBorder(BorderFactory.createMatteBorder(0,10,10,10,new Color(21,30,61)));
             painting.textFieldKeyPressed();
             painting.addComponent(painting,painting.getTextField(),0,1,1,0,0.25,0.01);
-            painting.addComponent(painting,new JButton("Get Choices"),1,1,1,1,0.25,0.01);
+            painting.setChoiceButton(new JButton("Get Choices"));
+            painting.addComponent(painting,painting.getChoiceButton(),1,1,1,1,0.25,0.01);
             mC.storyControllerPlay();
+            mC.getStoryController().setStoryOfLayer();
+            createButtonListeners();
         }
     }
+
     /**
      *
      * @param next ist der Wahrheitswert den nextLayer übergeben wird
@@ -132,4 +147,6 @@ public class MainFrame extends JFrame {
     public Painting[] getPaintings() {
         return paintings;
     }
+
+
 }

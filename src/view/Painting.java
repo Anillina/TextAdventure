@@ -7,6 +7,7 @@ import java.awt.*;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 
 
 /**
@@ -18,6 +19,7 @@ public  class Painting extends JPanel{
     private JTextField textField;
     private JLabel label,choiceLabel;
     private JButton[] buttons;
+    private JButton choiceButton;
     private GridBagLayout layout;
     private PaintTool paintTool;
     private ModelController modelController;
@@ -29,7 +31,6 @@ public  class Painting extends JPanel{
     public Painting(ModelController modelC){
         modelController=modelC;
         paintTool=new PaintTool();
-        modelController.loadImages(paintTool);
         setLayout(layout=new GridBagLayout());
     }
 
@@ -85,6 +86,11 @@ public  class Painting extends JPanel{
         button.setText(text);
     }
 
+    public void setImageIconOfLabel(JLabel label, BufferedImage img){
+        ImageIcon im=new ImageIcon(img);
+        label.setIcon(im);
+    }
+
     /**
      *
      * @return der Array der JButtons wird zurückgegeben
@@ -102,10 +108,7 @@ public  class Painting extends JPanel{
                     textField.setText("");
                     System.out.println(choice);
                     modelController.storyControllerPlay();
-                    repaint();
-                    revalidate();
-
-                    System.out.println(modelController.getPlayer().getLevel());
+                    choiceLabel.setVisible(false);
                 }
             }
         });
@@ -131,6 +134,17 @@ public  class Painting extends JPanel{
         label= labe;
     }
 
+    public void setChoiceButton(JButton choice) {
+        choiceButton = choice;
+    }
+
+    public ModelController getModelController() {
+        return modelController;
+    }
+
+    public void setModelController(ModelController modelController) {
+        this.modelController = modelController;
+    }
 
     public void setChoiceLabel(JLabel choiceLabel) {
         this.choiceLabel = choiceLabel;
@@ -157,9 +171,11 @@ public  class Painting extends JPanel{
         return choice;
     }
 
-
     public JLabel getChoiceLabel() {
         return choiceLabel;
     }
 
+    public JButton getChoiceButton() {
+        return choiceButton;
+    }
 }
