@@ -592,6 +592,11 @@ public class Story {
         }
 
     }
+
+    /**
+     * Rückgabe von der maximalen Anazl an Orten,Texten,Möglichkeitentexten sowie Auswahlmölichkeiten.
+     * @return Maximale Anzahl von Orten,Texten,Möglichkeitentexten sowie Auswahlmölichkeiten.
+     */
     public int getMaxOrte() {
         return maxOrte;
     }
