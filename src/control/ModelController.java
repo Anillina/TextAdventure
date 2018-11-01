@@ -42,7 +42,7 @@ public class ModelController {
        if(view.getFrame().isNextLayer()){
            player.setLayer(player.getLayer()+1);
            view.getFrame().drawPaintings();
-           //storyController.checkAnswer();
+//           storyController.checkAnswer();
            view.getFrame().setNextLayer(false);
        }
     }
@@ -81,6 +81,8 @@ public class ModelController {
             if(storyController.getPainting()==null) {
                 storyController.setPainting(view.getFrame().getPaintings()[player.getLayer()]);
             }
+
+            storyController.updateSentencesAndChoices();
             storyController.checkAnswer();
             background.setBackgrounds(player.getLayer());
         }

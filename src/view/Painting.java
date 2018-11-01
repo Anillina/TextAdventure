@@ -1,6 +1,7 @@
 package view;
 
 import control.ModelController;
+import control.StoryController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,6 +24,7 @@ public  class Painting extends JPanel{
     private GridBagLayout layout;
     private PaintTool paintTool;
     private ModelController modelController;
+    private StoryController storyController;
 
 
     /**
@@ -157,7 +159,6 @@ public  class Painting extends JPanel{
     public void setChoiceText(String choice){
         choiceLabel.setText(choice);
     }
-
 
     public JLabel getLabel(){
         return label;

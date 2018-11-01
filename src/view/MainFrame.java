@@ -38,7 +38,7 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocation(x,y);
         setSize(width,height);
-        setResizable(false);
+        setResizable(true);
         maxLayer=2;
         paintings=new Painting[maxLayer];
         for(int i=0;i< paintings.length;i++) {
@@ -71,7 +71,6 @@ public class MainFrame extends JFrame {
                     paintings[0].remove(paintings[0].getButtons()[0]);
                     view.setLayer(view.getLayer() + 1);
                     drawPaintings();
-                    //mC.getStoryController().setStoryOfLayer();
                 }
             });
         }
@@ -124,7 +123,6 @@ public class MainFrame extends JFrame {
             painting.setChoiceButton(new JButton("Get Choices"));
             painting.addComponent(painting,painting.getChoiceButton(),1,1,1,1,0.25,0.01);
             mC.storyControllerPlay();
-            mC.getStoryController().setStoryOfLayer();
             createButtonListeners();
         }
     }

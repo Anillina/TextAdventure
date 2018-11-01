@@ -1,6 +1,7 @@
 package control;
 
-import model.Being;
+
+import com.sun.tools.corba.se.idl.constExpr.Or;
 import model.Player;
 import model.Story;
 import view.MainView;
@@ -10,7 +11,11 @@ public class StoryController {
 
     private Story story;
     private Painting painting;
-    private Being player;
+    private Player player;
+    private String [] Orte;
+    private String [] Texte;
+    private String [] Moeglichkeitentexte;
+    private String [] Auswahlmoeglichkeiten;
 
 
     public StoryController(Player pl, Story story){
@@ -18,186 +23,79 @@ public class StoryController {
         this.story=story;
     }
 
-  public void checkAnswer() {
-        if(player.getLayer()==1) {
-            if(player.getLevel()==0 ) {
-                if (story.getSentences()[0][0][1].equals(painting.getChoice())) {
-                    player.setLevel(1);
-                    setStoryOfLayer();
+    public void updateSentencesAndChoices() {
+        String [][] input =story.getSentencesAndChoices(player.getPosition());
+        Orte =new String [story.getMaxOrte()];
+        Texte =new String [story.getMaxTexte()];
+        Moeglichkeitentexte = new String [story.getMaxMoeglichkeitentexte()];
+        Auswahlmoeglichkeiten = new String [story.getMaxAuswahlmoeglichkeiten()];
+        for (int i = 1; i < input.length; i++) {
+            for (int j = 0; j < input[i].length; j++) {
+                if (input[i][j].contains("Ort")){
+                   Orte=addObjectToArray(Orte,input[0][j]);
                 }
-                if (story.getSentences()[0][0][2].equals(painting.getChoice())) {
-                    player.setLevel(2);
-                    setStoryOfLayer();
+                if (input[i][j].contains("Text")){
+                    Texte=addObjectToArray(Texte,input[0][j]);
                 }
-            }
-            if(player.getLevel()==2) {
-                if (story.getSentences()[0][2][1].equals(painting.getChoice())) {
-                    player.setLevel(3);
-                    setStoryOfLayer();
+                if (input[i][j].contains("Möglichkeitentext")){
+                    Moeglichkeitentexte=addObjectToArray(Moeglichkeitentexte,input[0][j]);
                 }
-                if (story.getSentences()[0][2][2].equals(painting.getChoice())) {
-                    player.setLevel(4);
-                    setStoryOfLayer();
-                }
-                if (story.getSentences()[0][2][3].equals(painting.getChoice())) {
-                    player.setLevel(5);
-                    setStoryOfLayer();
+                if (input[i][j].contains("Auswahl")){
+                    Auswahlmoeglichkeiten= addObjectToArray(Auswahlmoeglichkeiten,input[0][j]);
                 }
             }
-            if(player.getLevel()==3) {
-                if (story.getSentences()[0][3][1].equals(painting.getChoice())) {
-                    player.setLevel(6);
-                    setStoryOfLayer();
-                }
-                if (story.getSentences()[0][3][2].equals(painting.getChoice())) {
-                    player.setLevel(7);
-                    setStoryOfLayer();
-                }
-                if (story.getSentences()[0][3][3].equals(painting.getChoice())) {
-                    player.setLevel(8);
-                    setStoryOfLayer();
-                }
-                if (story.getSentences()[0][3][4].equals(painting.getChoice())) {
-                    player.setLevel(5);
-                    setStoryOfLayer();
-                }
-            }
-            if(player.getLevel()==4) {
-                if (story.getSentences()[0][4][1].equals(painting.getChoice())) {
-                    player.setLevel(12);
-                    setStoryOfLayer();
-                }
-                if (story.getSentences()[0][4][2].equals(painting.getChoice())) {
-                    player.setLevel(13);
-                    setStoryOfLayer();
-                }
-            }
-            if(player.getLevel()==5) {
-                if (story.getSentences()[0][5][1].equals(painting.getChoice())) {
-                    player.setLevel(9);
-                    setStoryOfLayer();
-                }
-                if (story.getSentences()[0][5][2].equals(painting.getChoice())) {
-                    player.setLevel(10);
-                    setStoryOfLayer();
-                }
-                if (story.getSentences()[0][5][3].equals(painting.getChoice())) {
-                    player.setLevel(3);
-                    setStoryOfLayer();
-                }
-            }
-            if(player.getLevel()==6) {
-                if (story.getSentences()[0][6][1].equals(painting.getChoice())) {
-                    player.setLevel(11);
-                    setStoryOfLayer();
-                }
-                if (story.getSentences()[0][6][2].equals(painting.getChoice())) {
-                    player.setLevel(11);
-                    setStoryOfLayer();
-                }
-            }
-            if(player.getLevel()==7) {
-                if (story.getSentences()[0][7][1].equals(painting.getChoice())) {
-                    player.setLevel(11);
-                    setStoryOfLayer();
-                }
-                if (story.getSentences()[0][7][2].equals(painting.getChoice())) {
-                    player.setLevel(11);
-                    setStoryOfLayer();
-                }
-            }
-            if(player.getLevel()==8) {
-                if (story.getSentences()[0][8][1].equals(painting.getChoice())) {
-                    player.setLevel(11);
-                    setStoryOfLayer();
-                }
-                if (story.getSentences()[0][8][2].equals(painting.getChoice())) {
-                    player.setLevel(11);
-                    setStoryOfLayer();
-                }
-            }
-            if(player.getLevel()==9&&player.getLevel()== 10) {
-                player.setLevel(3);
-                setStoryOfLayer();
-            }
-            if(player.getLevel()==11) {
-                if (story.getSentences()[0][11][1].equals(painting.getChoice())) {
-                    player.setLevel(12);
-                    setStoryOfLayer();
-                }
-                if (story.getSentences()[0][11][2].equals(painting.getChoice())) {
-                    player.setLevel(13);
-                    setStoryOfLayer();
-                }
-            }
-            if(player.getLevel()==12 &&player.getLevel()==13){
-                player.setLevel(0);
-                player.setLayer(1);
-                setStoryOfLayer();
-            }
+        }
+        Orte=removeEmptyArraySlots(Orte);
+        Texte=removeEmptyArraySlots(Texte);
+        Moeglichkeitentexte=removeEmptyArraySlots(Moeglichkeitentexte);
+        Auswahlmoeglichkeiten=removeEmptyArraySlots(Auswahlmoeglichkeiten);
+        for (int i = 0; i < Texte.length; i++) {
+             painting.setText(Texte[i]);
+        }
+        for (int i = 0; i < Moeglichkeitentexte.length; i++) {
+             painting.setChoiceText(Moeglichkeitentexte[i]);
+        }
+        if (arrayIsEmpty(Moeglichkeitentexte)){
+            painting.setChoiceText("");
         }
     }
 
-    public void setStoryOfLayer(){
-        if(player.getLayer()==1) {
-            if (player.getLevel() == 0) {
-                painting.setText(story.getSentences()[0][0][0]);
-                painting.setChoiceText(story.getSentences()[0][0][3]);
-            }
-            if(player.getLevel()==1) {
-                painting.setText(story.getSentences()[0][1][0]);
-                painting.setChoiceText("");
-            }
-            if(player.getLevel()==2) {
-                painting.setText(story.getSentences()[0][2][0]);
-                painting.setChoiceText(story.getSentences()[0][2][4]);
-            }
-            if(player.getLevel()==3) {
-                painting.setText(story.getSentences()[0][3][0]);
-                painting.setChoiceText(story.getSentences()[0][3][5]);
-            }
-            if(player.getLevel()==4) {
-                painting.setText(story.getSentences()[0][4][0]);
-                painting.setChoiceText(story.getSentences()[0][4][3]);
-            }
-            if(player.getLevel()==5) {
-                painting.setText(story.getSentences()[0][5][0]);
-                painting.setChoiceText(story.getSentences()[0][5][4]);
-            }
-            if(player.getLevel()==6) {
-                painting.setText(story.getSentences()[0][6][0]);
-                painting.setChoiceText(story.getSentences()[0][6][3]);
-            }
-            if(player.getLevel()==7) {
-                painting.setText(story.getSentences()[0][7][0]);
-                painting.setChoiceText(story.getSentences()[0][7][3]);
-            }
-            if(player.getLevel()==8) {
-                painting.setText(story.getSentences()[0][8][0]);
-                painting.setChoiceText(story.getSentences()[0][8][3]);
-            }
-            if(player.getLevel()==9) {
-                painting.setText(story.getSentences()[0][9][0]);
-                painting.setChoiceText("");
-            }
-            if(player.getLevel()==10) {
-                painting.setText(story.getSentences()[0][10][0]);
-                painting.setChoiceText("");
-            }
-            if(player.getLevel()==11) {
-                painting.setText(story.getSentences()[0][11][0]);
-                painting.setChoiceText(story.getSentences()[0][11][3]);
-            }
-            if(player.getLevel()==12) {
-                painting.setText(story.getSentences()[0][12][0]);
-                painting.setChoiceText("");
-            }
-            if(player.getLevel()==13) {
-                painting.setText(story.getSentences()[0][13][0]);
-                painting.setChoiceText("");
+
+    public void checkAnswer(){
+
+            String[][] input = story.getSentencesAndChoices(player.getPosition());
+            Orte = new String[story.getMaxOrte()];
+            Auswahlmoeglichkeiten = new String[story.getMaxAuswahlmoeglichkeiten()];
+
+         for (int i = 1; i < input.length; i++) {
+            for (int j = 0; j < input[i].length; j++) {
+                if (input[i][j].contains("Ort")){
+                    Orte=addObjectToArray(Orte,input[0][j]);
+                }
+
+                if (input[i][j].contains("Auswahl")){
+                    Auswahlmoeglichkeiten= addObjectToArray(Auswahlmoeglichkeiten,input[0][j]);
+                }
             }
         }
-    }
+            Orte=removeEmptyArraySlots(Orte);
+            Auswahlmoeglichkeiten=removeEmptyArraySlots(Auswahlmoeglichkeiten);
+
+            boolean found = false;
+            int foundAt = 0;
+            for (int i = 0; i < Auswahlmoeglichkeiten.length && !found; i++) {
+                if (Auswahlmoeglichkeiten[i].equals(painting.getChoice())) {
+                    found = true;
+                    foundAt = i;
+
+                }
+            }
+            if (found) {
+                player.setPosition(Orte[foundAt]);
+                this.updateSentencesAndChoices();
+            }
+        }
+
 
     public void setPainting(Painting paint){
         painting=paint;
@@ -205,6 +103,48 @@ public class StoryController {
 
     public Painting getPainting() {
         return painting;
+    }
+
+    private String []addObjectToArray(String [] input,String object){
+        boolean foundSpace=false;
+        for (int i=0;i<input.length && !foundSpace;i++) {
+            if (input[i]== null){
+                input[i]=object;
+                foundSpace=true;
+            }
+        }
+        if (foundSpace){
+            return input;
+        }else{
+            return new String [] {"Kein freier Platz im Array"};
+        }
+    }
+    private boolean arrayIsEmpty(String[] array) {
+        boolean found=false;
+        for(int i=0;i<array.length && !found;i++){
+        if (array[i]!=null){
+            found=true;
+        }
+        }
+        if (found){
+        return false;
+        }
+        else {
+        return true;
+        }
+    }
+    private String [] removeEmptyArraySlots(String [] input){
+        int emptySlots=0;
+        for (int i=0;i<input.length;i++) {
+            if (input[i]== null){
+                emptySlots++;
+            }
+        }
+        String [] output=new String[input.length-emptySlots];
+        for (int i=0;i<output.length;i++) {
+            output[i]=input[i];
+        }
+        return output;
     }
 
 }

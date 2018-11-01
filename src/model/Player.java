@@ -4,9 +4,11 @@ public class Player extends Being {
 
     private double t1,t2;
     private int hp;
+    private String position;
 
     public Player(int fightStrength,int hp) {
         super(fightStrength);
+        position="1,1";
         t1=(double)System.currentTimeMillis();
     }
     /**
@@ -35,5 +37,12 @@ public class Player extends Being {
         this.hp = hp;
     }
 
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
 }
 
