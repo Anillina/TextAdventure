@@ -1,10 +1,7 @@
 package control;
 
-
-import com.sun.tools.corba.se.idl.constExpr.Or;
 import model.Player;
 import model.Story;
-import view.MainView;
 import view.Painting;
 
 public class StoryController {

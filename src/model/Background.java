@@ -33,27 +33,39 @@ public class Background {
                loadImage(backgrounds,0,"assets/backgrounds/start.png");
                break;
            case 1:
-               backgrounds = new BufferedImage[3];
-               loadImage(backgrounds,0,"assets/backgrounds/layer1/beforest.png");
-               loadImage(backgrounds,1,"assets/backgrounds/layer1/inforest.png");
-               loadImage(backgrounds,2,"assets/backgrounds/layer1/layer1.png");
+               backgrounds = new BufferedImage[26];
+               loadImage(backgrounds,0,"assets/backgrounds/prolog.png");
+               loadImage(backgrounds,1,"assets/backgrounds/layer1/beforest.png");
+               loadImage(backgrounds,2,"assets/backgrounds/layer1/level1.png");
+               loadImage(backgrounds,3,"assets/backgrounds/layer1/inforest.png");
+               loadImage(backgrounds,4,"assets/backgrounds/layer1/inforestWTF.png");
+               loadImage(backgrounds,5,"assets/backgrounds/layer1/flower.png");
+               loadImage(backgrounds,6,"assets/backgrounds/layer1/layer1.png");
+               loadImage(backgrounds,7,"assets/backgrounds/layer1/masonEating.png");
+               loadImage(backgrounds,8,"assets/backgrounds/layer1/masonEatingEye.png");
+               loadImage(backgrounds,9,"assets/monsters/pressure/1.png");
+               loadImage(backgrounds,10,"assets/characters/sister/standing.png");
+               //layer 2
+               loadImage(backgrounds,11,"assets/backgrounds/layer2/first.png");
+               loadImage(backgrounds,12,"assets/backgrounds/layer2/1.png");
+               loadImage(backgrounds,13,"assets/backgrounds/layer2/second.png");
+               loadImage(backgrounds,14,"assets/backgrounds/layer2/third.png");
+               loadImage(backgrounds,15,"assets/backgrounds/layer2/closet.png");
+               loadImage(backgrounds,16,"assets/backgrounds/layer2/deadMom.png");
+               loadImage(backgrounds,17,"assets/monsters/torso/white.png");
+               //layer3
+               loadImage(backgrounds,18,"assets/backgrounds/layer3/corridor.png");
+               loadImage(backgrounds,19,"assets/backgrounds/layer3/corridorG.png");
+               loadImage(backgrounds,20,"assets/backgrounds/layer3/photo.png");
+               loadImage(backgrounds,21,"assets/backgrounds/layer3/masonMad.png");
+               loadImage(backgrounds,22,"assets/backgrounds/layer3/corridorG1.png");
+               loadImage(backgrounds,23,"assets/backgrounds/layer3/badend.png");
+               loadImage(backgrounds,24,"assets/backgrounds/layer3/badend2.png");
+               loadImage(backgrounds,25,"assets/backgrounds/layer4/Ave.png");
                break;
        }
     }
 
-    public void drawBackgrounds(PaintTool paintTool,int layer){
-        switch(layer){
-            case 0:
-                paintTool.drawImage(paintTool.resize(backgrounds[0],width,height),x,y);
-        }
-    }
-
-    public void manageScene(int layer , double dt){
-        switch (layer){
-            case 0:
-                y-=100*dt;
-        }
-    }
 
     public BufferedImage[] getBackgrounds() {
         return backgrounds;

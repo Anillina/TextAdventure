@@ -105,15 +105,17 @@ public class MainFrame extends JFrame {
         if (view.getLayer()==1 && view.getModelController().getPlayer().getLevel()==0 ){
             Painting painting= paintings[view.getLayer()];
             setContentPane(painting);
+            painting.setOpaque(false);
             //JLabel
             painting.setLabel(new JLabel());
             painting.getLabel().setBorder(BorderFactory.createMatteBorder(10,10,10,0,new Color(21,30,61)));
             painting.addComponent(painting,painting.getLabel(),0,0,1,1,6,1);
             painting.getLabel().setOpaque(true);
             painting.setChoiceLabel(new JLabel());
+            painting.getLabel().setOpaque(false);
             paintings[1].getChoiceLabel().setVisible(false);
             painting.getChoiceLabel().setBorder(BorderFactory.createMatteBorder(10,10,10,10,new Color(21,30,61)));
-            painting.getChoiceLabel().setOpaque(true);
+            painting.getChoiceLabel().setOpaque(false);
             painting.addComponent(painting,painting.getChoiceLabel(),1,0,1,1,0.25,1);
             //JTextField
             painting.setTextField(new JTextField());
